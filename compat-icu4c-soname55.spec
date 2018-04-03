@@ -4,7 +4,7 @@
 #
 Name     : compat-icu4c-soname55
 Version  : 55.rc
-Release  : 2
+Release  : 3
 URL      : http://download.icu-project.org/files/icu4c/55rc/icu4c-55_rc-src.tgz
 Source0  : http://download.icu-project.org/files/icu4c/55rc/icu4c-55_rc-src.tgz
 Summary  : International Components for Unicode
@@ -115,7 +115,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1522778169
+export SOURCE_DATE_EPOCH=1522781095
 pushd source
 %configure --disable-static
 make  %{?_smp_mflags}
@@ -137,7 +137,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 pushd source ; make check; popd
 
 %install
-export SOURCE_DATE_EPOCH=1522778169
+export SOURCE_DATE_EPOCH=1522781095
 rm -rf %{buildroot}
 pushd ../build32/source
 %make_install32
@@ -154,16 +154,16 @@ popd
 
 %files
 %defattr(-,root,root,-)
+%exclude /usr/lib32/icu/Makefile.inc
 %exclude /usr/lib32/icu/current
+%exclude /usr/lib32/icu/pkgdata.inc
+%exclude /usr/lib64/icu/Makefile.inc
 %exclude /usr/lib64/icu/current
+%exclude /usr/lib64/icu/pkgdata.inc
 /usr/lib32/icu/55.1/Makefile.inc
 /usr/lib32/icu/55.1/pkgdata.inc
-/usr/lib32/icu/Makefile.inc
-/usr/lib32/icu/pkgdata.inc
 /usr/lib64/icu/55.1/Makefile.inc
 /usr/lib64/icu/55.1/pkgdata.inc
-/usr/lib64/icu/Makefile.inc
-/usr/lib64/icu/pkgdata.inc
 
 %files bin
 %defattr(-,root,root,-)

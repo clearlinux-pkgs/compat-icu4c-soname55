@@ -2,3 +2,7 @@
 # names, one per line.
 /usr/lib32/icu/current
 /usr/lib64/icu/current
+/usr/lib32/icu/Makefile.inc
+/usr/lib32/icu/pkgdata.inc
+/usr/lib64/icu/Makefile.inc
+/usr/lib64/icu/pkgdata.inc
